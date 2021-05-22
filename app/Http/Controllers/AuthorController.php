@@ -21,22 +21,22 @@ class AuthorController extends Controller
 
     public function store(Request $request)
     {
-//        dd($request);
+//        dd($path);
         $author = new Author();
         $author->name = $request->name;
-        $path = $request->file('avatars')->store('avatars', 'public');
+        $path = $request->file('avatars')->store('/avatars', 'public');
         $author->avatar = $path;
         $author->year = $request->year;
         $author->amount = $request->amount;
         $author->nationality = $request->nationality;
         $author->link = $request->link;
         $author->save();
-        toastr()->success('Congratulations on your successful creation!!!');
+//        toastr()->success('Congratulations on your successful creation!!!');
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
         }
-        return redirect()->route('author.index');
+        return redirect()->route('author.index')->with("message", 'Data added successful');
 
     }
 
@@ -77,7 +77,7 @@ class AuthorController extends Controller
     {
         $search = $request->keyword;
         $authors = DB::table('authors')->where('name', 'LIKE', "%$search%")->paginate(4);
-        return view('author.index', compact('authors'));
+        return view('author.index',  compact('authors'));
     }
 
 }

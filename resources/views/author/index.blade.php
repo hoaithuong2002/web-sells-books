@@ -19,6 +19,7 @@
                                     <th>Amount</th>
                                     <th>Nationality</th>
                                     <th>Link Wikipedia</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -46,6 +47,8 @@
                                         <th>Amount</th>
                                         <th>Nationality</th>
                                         <th>Link Wikipedia</th>
+                                        <th>Action</th>
+
                                     </tr>
                                 </tfood>
                             </table>
