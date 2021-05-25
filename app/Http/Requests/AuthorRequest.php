@@ -34,6 +34,7 @@ class AuthorRequest extends FormRequest
     public function messages()
     {
         return [
+
             'name.required' => "Truong nay Khong duoc de trong",
             'name.unique' => "Truong nay da ton tai",
             'year.required' => "Truong nay khong duoc de trong",

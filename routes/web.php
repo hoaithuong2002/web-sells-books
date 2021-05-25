@@ -23,4 +23,3 @@ Route::prefix('author')->group(function () {
     Route::get('/delete/{id}', [AuthorController::class, 'delete'])->name('author.delete');
     Route::post('/search', [AuthorController::class, 'search'])->name('author.search');
 });
-Route::view('/welcome', 'author.update');

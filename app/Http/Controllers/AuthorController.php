@@ -22,7 +22,6 @@ class AuthorController extends Controller
 
     public function store(AuthorRequest $request)
     {
-        //        dd($path);
         $author = new Author();
         $author->name = $request->name;
         $path = $request->file('avatars')->store('/avatars', 'public');
@@ -33,6 +32,7 @@ class AuthorController extends Controller
         $author->link = $request->link;
         $author->save();
         toastr()->success('Thêm mới thành công');
+
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
@@ -58,6 +58,7 @@ class AuthorController extends Controller
         $author->link = $request->link;
         $author->save();
         toastr()->success('Cập nhật thành công');
+
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
