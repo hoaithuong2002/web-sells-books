@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('author')->group(function (){
-Route::get('/', [AuthorController::class, 'index'])->name('author.index');
-Route::get('/create', [AuthorController::class, 'create'])->name('author.create');
-Route::post('/store', [AuthorController::class, 'store'])->name('author.store');
-Route::get('/edit/{id}', [AuthorController::class, 'edit'])->name('author.edit');
-Route::post('/update/{id}', [AuthorController::class, 'update'])->name('author.update');
-Route::get('/delete/{id}',[AuthorController::class,'delete'])->name('author.delete');
-Route::post('/search',[AuthorController::class,'search'])->name('author.search');
+Route::prefix('author')->group(function () {
+    Route::get('/', [AuthorController::class, 'index'])->name('author.index');
+    Route::get('/create', [AuthorController::class, 'create'])->name('author.create');
+    Route::post('/store', [AuthorController::class, 'store'])->name('author.store');
+    Route::get('/edit/{id}', [AuthorController::class, 'edit'])->name('author.edit');
+    Route::post('/update/{id}', [AuthorController::class, 'update'])->name('author.update');
+    Route::get('/delete/{id}', [AuthorController::class, 'delete'])->name('author.delete');
+    Route::post('/search', [AuthorController::class, 'search'])->name('author.search');
 });

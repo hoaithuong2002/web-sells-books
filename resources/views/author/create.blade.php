@@ -10,7 +10,7 @@
                         <label for="name" class=" form-control-label">Name Author</label>
                         <input value="{{old('name')}}" type="text" name="name" class="form-control  @error('name') border-danger  @enderror">
                         @error('name')
-                        <p class="text-danger">{{ $message }}</p>
+                        <p class="invalid-feedback">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="form-group">
