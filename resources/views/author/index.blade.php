@@ -9,26 +9,43 @@
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
                         </div>
-                        <div class="row form-group">
-                            <div class="col-lg-4">
-                                <a type="submit" class="btn btn-outline-success" href="{{route('author.create')}}">Add
-                                    Author</a>
-                            </div>
-                            <div class="col-col-lg-4">
-                                <div class="input-group rounded ">
-                                    <form action="{{route('author.search')}}" method="post">
-                                        @csrf
-                                        <span class="input-icon">
-									        <input name="keywork" type="text" placeholder="Search ..." class="nav-search-input"
-                                           id="nav-search-input" autocomplete="off"/>
-								            	<i class="ace-icon fa fa-search nav-search-icon"></i>
-							        	</span>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-body">
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="dataTables_length" id="bootstrap-data-table_length">
+                                            <label>
+                                                Show
+                                                <select name="bootstrap-data-table_length"
+                                                        aria-controls="bootstrap-data-table"
+                                                        class="form-control form-control-sm">
+                                                    <option value="10">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="50">50</option>
+                                                    <option value="-1">All</option>
+                                                </select>
+                                                entries
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="dataTables_filter">
+                                            <form action="{{route('author.search')}}" method="post">
+                                                @csrf
+                                            <label>
+                                                Search:
+                                                <input type="search" name="keyword" class="form-control form-control-sm"
+                                                        aria-controls="bootstrap-data-table">
+                                            </label>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-4">
+                                        <a type="submit" class=" fa-plus-square-o btn btn-outline-success" href="{{route('author.create')}}" >Add Author</a>
+                                    </div>
+                                </div>
+
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -86,4 +103,27 @@
             </div>
         </div><!-- .animated -->
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.10/jquery.autocomplete.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $("#keyword").autocomplete({
+                serviceUrl:'/author/search',
+                paramName: "keyword",
+                onSelect: function(suggestion) {
+                    $("#keyword").val(suggestion.value);
+                },
+                transformResult: function(response) {
+                    return {
+                        suggestions: $.map($.parseJSON(response), function(item) {
+                            return {
+                                value: item.name,
+                            };
+                        })
+                    };
+                },
+            });
+        })
+    </script>
 @endsection

@@ -117,5 +117,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="html5shiv" level="application" />
+    <orderEntry type="library" name="jquery.devbridge-autocomplete" level="application" />
   </component>
 </module>

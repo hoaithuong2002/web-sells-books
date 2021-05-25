@@ -75,6 +75,7 @@ class AuthorController extends Controller
     }
     public function search(Request $request)
     {
+//        dd($request);
         $search = $request->keyword;
         $authors = DB::table('authors')->where('name', 'LIKE', "%$search%")->paginate(4);
         return view('author.index',  compact('authors'));

@@ -75,7 +75,11 @@
         #cellPaiChart {
             height: 160px;
         }
-
+        .contact-index-index .fieldset>.field.required>.label:after {
+            color: #FF0000;
+            margin: 0;
+            font-size: 16px;
+        }
     </style>
 
 </head>
