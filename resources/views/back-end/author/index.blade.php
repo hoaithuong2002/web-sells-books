@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('back-end.layouts.master')
 @section('content')
     <div class="content">
         <div class="animated fadeIn">
@@ -93,7 +93,7 @@
                                 </tfood>
                             </table>
                             <div class="d-flex justify-content-center">
-                                {{ $authors->links( ) }}
+                                {{ $authors->links() }}
                             </div>
                         </div>
                     </div>

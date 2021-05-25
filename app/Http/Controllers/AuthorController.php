@@ -11,13 +11,13 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = DB::table('authors')->paginate(4);
-        return view('author.index', compact('authors'));
+        $authors = DB::table('authors')->paginate(5 );
+        return view('back-end.author.index', compact('authors'));
     }
 
     public function create()
     {
-        return view('author.create');
+        return view('back-end.author.create');
     }
 
     public function store(AuthorRequest $request)
@@ -43,7 +43,7 @@ class AuthorController extends Controller
     public function edit($id)
     {
         $author = Author::find($id);
-        return view('author.edit', compact('author'));
+        return view('back-end.author.edit', compact('author'));
     }
 
     public function update($id, AuthorRequest $request)
@@ -78,6 +78,6 @@ class AuthorController extends Controller
 //        dd($request);
         $search = $request->keyword;
         $authors = DB::table('authors')->where('name', 'LIKE', "%$search%")->paginate(4);
-        return view('author.index',  compact('authors'));
+        return view('back-end.author.index',  compact('authors'));
     }
 }

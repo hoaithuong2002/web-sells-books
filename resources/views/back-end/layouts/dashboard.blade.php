@@ -1,4 +1,5 @@
-@extends('layouts.master')
+@extends('back-end.layouts.master')
+
 @section('content')
     <div class="animated fadeIn">
         <!-- Widgets  -->

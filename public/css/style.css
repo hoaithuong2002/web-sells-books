@@ -503,7 +503,11 @@ canvas {
     background: #00c292; }
   .order-table .badge-pending {
     background: #fb9678; }
-
+.contact-index-index  {
+    color: #FF0000;
+    margin: 0;
+    font-size: 16px;
+}
 .messenger-box {
   padding-top: 15px; }
   .messenger-box ul {

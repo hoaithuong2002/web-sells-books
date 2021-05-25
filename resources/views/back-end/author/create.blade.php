@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('back-end.layouts.master')
 @section('content')
     <div class="col-lg-12">
         <div class="card">
@@ -7,7 +7,7 @@
                 <div class="card-header"><strong>Add Author</strong></div>
                 <div class="card-body card-block">
                     <div class="form-group">
-                        <label for="name" class=" form-control-label">Name Author
+                        <label for="name" class=" form-control-label">Name Author <i class="contact-index-index ">*</i>
                         </label>
                         <input value="{{old('name')}}" type="text" name="name"
                                class="form-control  @error('name') border-danger  @enderror">
@@ -16,35 +16,39 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="avatars" class=" form-control-label">Avatar</label>
+                        <label for="avatars" class=" form-control-label">Avatar </label>
                         <input type="file" name="avatars"
-                               class="form-control col-md-6  @error('avatars') border-danger  @enderror">
+                               class="form-control col-md-12 @error('avatars') border-danger  @enderror">
                         @error('avatars')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="year" class=" form-control-label">Year</label>
+                        <label for="year" class=" form-control-label">Year <i class="contact-index-index ">*</i></label>
                         <input type="date" id="year" name="year"
-                               class="form-control @error('year') border-danger @enderror ">
+                               class="form-control col-sm-12 @error('year') border-danger @enderror ">
                         @error('year')
                         <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="row form-group">
-                        <div class="col-8">
+                        <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="amount" class=" form-control-label">Work Amount </label>
+                                <label for="amount" class=" form-control-label">Work Amount <i class="contact-index-index ">*</i></label>
                                 <input type="number" id="amount" name="amount" class="form-control @error('amount') border-danger @enderror" >
                                 @error('amount')
                                 <p class="text-danger"> {{$message}}</p>
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="nationality" class=" form-control-label">Nationality</label>
-                                <input type="text" id="nationality" name="nationality" class="form-control">
+                                <label for="nationality" class=" form-control-label">Nationality <i class="contact-index-index ">*</i></label>
+                                <input type="text" id="nationality" name="nationality"
+                                       class="form-control @error('nationality') border-danger @enderror">
+                                @error('nationality')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -63,4 +67,11 @@
 
         </div>
     </div>
+
+    <script type="text/javascript" src="{{asset('/js/dropdown.js')}}"></script>
+    <script>
+        $(".dropzone").dropzone({
+            dictDefaultMessage: "<i class='sl sl-icon-plus'></i> Tải lên một hoặc nhiều hình ảnh về tác gỉả, tại đây",
+        });
+    </script>
 @endsection

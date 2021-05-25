@@ -1,4 +1,4 @@
-@extends('layouts.pages.app.app')
+@extends('back-end.layouts.pages.app.app')
 @section('login')
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">

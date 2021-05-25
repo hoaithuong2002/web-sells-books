@@ -85,17 +85,17 @@
 </head>
 <body>
 <!-- Left Panel -->
-@include('layouts.core.menu-left')<!-- /#left-panel -->
+@include('back-end.layouts.core.menu-left')<!-- /#left-panel -->
 <!-- Right Panel -->
 <div id="right-panel" class="right-panel">
     <!-- Header-->
-@include('layouts.core.navbar')
+@include('back-end.layouts.core.navbar')
     <!-- /#header -->
     <!-- Content -->
 @yield('content')    <!-- /.content -->
     <div class="clearfix"></div>
     <!-- Footer -->
-@include('layouts.core.footer')    <!-- /.site-footer -->
+@include('back-end.layouts.core.footer')    <!-- /.site-footer -->
 </div>
 <!-- /#right-panel -->
 
@@ -123,6 +123,8 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
 <script src="{{asset('js/init/fullcalendar-init.js')}}"></script>
+<script src="path/to/dropzone.js"></script>
+
 
 <!--Local Stuff-->
 <script>
@@ -319,6 +321,7 @@
 
 </script>
 </body>
+
 @jquery
 @toastr_js
 @toastr_render
