@@ -8,10 +8,10 @@
                 <li class="menu-title">UI elements</li><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Management User</a>
+                       aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Quản lý người dùng</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('author.index')}}">User List</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('author.create')}}">Add User</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('author.index')}}">Danh sách người dùng</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('author.create')}}">Thêm mới người dùng</a></li>
 
 
                         </ul>

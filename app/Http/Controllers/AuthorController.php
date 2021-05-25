@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthorRequest;
 use App\Models\Author;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,9 +20,9 @@ class AuthorController extends Controller
         return view('author.create');
     }
 
-    public function store(Request $request)
+    public function store(AuthorRequest $request)
     {
-//        dd($path);
+        //        dd($path);
         $author = new Author();
         $author->name = $request->name;
         $path = $request->file('avatars')->store('/avatars', 'public');
@@ -31,13 +32,12 @@ class AuthorController extends Controller
         $author->nationality = $request->nationality;
         $author->link = $request->link;
         $author->save();
-//        toastr()->success('Congratulations on your successful creation!!!');
+        toastr()->success('Thêm mới thành công');
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
         }
-        return redirect()->route('author.index')->with("message", 'Data added successful');
-
+        return redirect()->route('author.index');
     }
 
     public function edit($id)
@@ -50,14 +50,14 @@ class AuthorController extends Controller
     {
         $author = Author::find($id);
         $author->name = $request->name;
-        $path = $request->file('avatars')->store('avatars', 'public');
+        $path = $request->file('avatars')->store('/avatars', 'public');
         $author->avatar = $path;
         $author->year = $request->year;
         $author->amount = $request->amount;
         $author->nationality = $request->nationality;
         $author->link = $request->link;
         $author->save();
-        toastr()->success('You have successfully updated your information!!!');
+        toastr()->success('Cập nhật thành công');
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
@@ -69,9 +69,8 @@ class AuthorController extends Controller
     {
         $author = Author::findOrFail($id);
         $author->delete();
-        toastr()->success('You have remove to public!');
+        toastr()->success('Xoá thành công');
         return redirect()->route('author.index');
-
     }
     public function search(Request $request)
     {
@@ -79,5 +78,4 @@ class AuthorController extends Controller
         $authors = DB::table('authors')->where('name', 'LIKE', "%$search%")->paginate(4);
         return view('author.index',  compact('authors'));
     }
-
 }

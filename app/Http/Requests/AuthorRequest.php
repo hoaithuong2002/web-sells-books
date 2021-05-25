@@ -13,7 +13,7 @@ class AuthorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,21 +24,21 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>"required|unique",
-            'year'=>"required",
-            'amount'=>"required",
-            'nationality'=>"required",
+            'name' => "required|unique",
+            'year' => "required",
+            'amount' => "required",
+            'nationality' => "required",
         ];
     }
 
     public function messages()
     {
         return [
-          'name.required'=>"Truong nay Khong duoc de trong",
-          'name.unique'=>"Truong nay da ton tai",
-            'year.required'=>"Truong nay khong duoc de trong",
-            'amount.required'=>"Truong nay khong duoc de trong",
-            'nationality.required'=>"Truong nay khong duoc de trong",
+            'name.required' => "Truong nay Khong duoc de trong",
+            'name.unique' => "Truong nay da ton tai",
+            'year.required' => "Truong nay khong duoc de trong",
+            'amount.required' => "Truong nay khong duoc de trong",
+            'nationality.required' => "Truong nay khong duoc de trong",
         ];
     }
 }
