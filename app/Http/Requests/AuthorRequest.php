@@ -11,9 +11,9 @@ class AuthorRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +24,11 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>"required|unique",
+            'name'=>"required",
             'year'=>"required",
-            'amount'=>"required",
+            'amount'=>"required|min:0",
             'nationality'=>"required",
+
         ];
     }
 
@@ -35,10 +36,11 @@ class AuthorRequest extends FormRequest
     {
         return [
           'name.required'=>"Truong nay Khong duoc de trong",
-          'name.unique'=>"Truong nay da ton tai",
+//          'name.unique'=>"Truong nay da ton tai",
             'year.required'=>"Truong nay khong duoc de trong",
             'amount.required'=>"Truong nay khong duoc de trong",
             'nationality.required'=>"Truong nay khong duoc de trong",
+            'amount.min'=>"Tong so tac pham phai lon hon 0",
         ];
     }
 }

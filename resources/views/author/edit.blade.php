@@ -37,7 +37,7 @@
                         <input type="text" id="link" name="link" value="{{$author->link}}" class="form-control">
                     </div>
 
-                    <button type="submit" class="btn btn-success">Add Author</button>
+                    <button type="submit" class="btn btn-outline-success btn-lg btn-block">Update</button>
                 </div>
             </form>
 

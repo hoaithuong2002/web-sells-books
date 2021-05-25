@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthorRequest;
 use App\Models\Author;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,7 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = DB::table('authors')->get();
+        $authors = DB::table('authors')->paginate(20);
         return view('author.index', compact('authors'));
     }
 
@@ -19,9 +20,9 @@ class AuthorController extends Controller
         return view('author.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
-//        dd($path);
+//        dd($request);$request
         $author = new Author();
         $author->name = $request->name;
         $path = $request->file('avatars')->store('/avatars', 'public');
@@ -31,12 +32,12 @@ class AuthorController extends Controller
         $author->nationality = $request->nationality;
         $author->link = $request->link;
         $author->save();
-//        toastr()->success('Congratulations on your successful creation!!!');
+        toastr()->success('Congratulations on your successful creation!!!');
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
         }
-        return redirect()->route('author.index')->with("message", 'Data added successful');
+        return redirect()->route('author.index');
 
     }
 
@@ -46,11 +47,11 @@ class AuthorController extends Controller
         return view('author.edit', compact('author'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, AuthorRequest $request)
     {
         $author = Author::find($id);
         $author->name = $request->name;
-        $path = $request->file('avatars')->store('avatars', 'public');
+        $path = $request->file('avatars')->store('/avatars', 'public');
         $author->avatar = $path;
         $author->year = $request->year;
         $author->amount = $request->amount;
