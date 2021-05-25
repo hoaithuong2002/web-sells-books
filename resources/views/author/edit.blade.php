@@ -12,6 +12,7 @@
                     </div>
                     <div class="form-group">
                         <label for="avatars" class=" form-control-label">Avatar</label>
+                        <img src="{{$author->avatar}}">
                         <input type="file" id="avatars" value="{{$author->avatar}}" name="avatars" class="form-control">
                     </div>
                     <div class="form-group">

@@ -11,7 +11,7 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = DB::table('authors')->paginate(20);
+        $authors = DB::table('authors')->paginate(4);
         return view('author.index', compact('authors'));
     }
 
@@ -20,9 +20,8 @@ class AuthorController extends Controller
         return view('author.create');
     }
 
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(AuthorRequest $request)
     {
-//        dd($request);$request
         $author = new Author();
         $author->name = $request->name;
         $path = $request->file('avatars')->store('/avatars', 'public');
@@ -33,12 +32,12 @@ class AuthorController extends Controller
         $author->link = $request->link;
         $author->save();
         toastr()->success('Congratulations on your successful creation!!!');
+
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
         }
         return redirect()->route('author.index');
-
     }
 
     public function edit($id)
@@ -58,7 +57,8 @@ class AuthorController extends Controller
         $author->nationality = $request->nationality;
         $author->link = $request->link;
         $author->save();
-        toastr()->success('You have successfully updated your information!!!');
+        toastr()->success('Cập nhật thành công');
+
         if ($request->hasFile('image')) {
             $file = $request->file('avatars');
             $file->storeAs('public/avatars', 'anh_' . $author->id);
@@ -70,9 +70,8 @@ class AuthorController extends Controller
     {
         $author = Author::findOrFail($id);
         $author->delete();
-        toastr()->success('You have remove to public!');
+        toastr()->success('Xoá thành công');
         return redirect()->route('author.index');
-
     }
     public function search(Request $request)
     {
@@ -80,5 +79,4 @@ class AuthorController extends Controller
         $authors = DB::table('authors')->where('name', 'LIKE', "%$search%")->paginate(4);
         return view('author.index',  compact('authors'));
     }
-
 }

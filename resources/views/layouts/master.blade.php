@@ -7,7 +7,7 @@
 <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang=""> <!--<![endif]-->
-<head>x
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @yield('title')
@@ -310,6 +310,7 @@
             }
         });
         // Bar Chart #flotBarChart End
+
     });
 
 </script>

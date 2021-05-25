@@ -18,13 +18,11 @@
                                 <div class="input-group rounded ">
                                     <form action="{{route('author.search')}}" method="post">
                                         @csrf
-                                        <input type="search" href="{{route('author.search')}}"
-                                               class="form-control rounded" placeholder="Search"
-                                               aria-label="Search"
-                                               aria-describedby="search-addon"/>
-                                        <span class="input-group-text border-0" id="search-addon">
-                                            <i class="fa fa-search"></i>
-                                        </span>
+                                        <span class="input-icon">
+									        <input name="keywork" type="text" placeholder="Search ..." class="nav-search-input"
+                                           id="nav-search-input" autocomplete="off"/>
+								            	<i class="ace-icon fa fa-search nav-search-icon"></i>
+							        	</span>
                                     </form>
                                 </div>
                             </div>
@@ -50,7 +48,9 @@
                                         <td>{{$author->year}}</td>
                                         <td>{{$author->amount}}</td>
                                         <td>{{$author->nationality}}</td>
-                                        <td>{{$author->link}}</td>
+                                        <td>
+                                            <a href="{{$author->link}}"> {{$author->link}} </a>
+                                        </td>
                                         <td>
                                             {{--                                            <button type="button" class="btn btn-outline-danger">Delete</button>--}}
                                             <a onclick="return confirm('Are you sure delete user: {{ $author->name }}')"
@@ -76,7 +76,7 @@
                                 </tfood>
                             </table>
                             <div class="d-flex justify-content-center">
-                                {{--                                {{ $author->links() }}--}}
+                                {{ $authors->links( ) }}
                             </div>
                         </div>
                     </div>

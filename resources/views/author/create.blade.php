@@ -7,7 +7,7 @@
                 <div class="card-header"><strong>Add Author</strong></div>
                 <div class="card-body card-block">
                     <div class="form-group">
-                        <label for="name" class=" form-control-label">Name Author <i class="outline-danger"> (*)</i>
+                        <label for="name" class=" form-control-label">Name Author
                         </label>
                         <input value="{{old('name')}}" type="text" name="name"
                                class="form-control  @error('name') border-danger  @enderror">
