@@ -33,7 +33,7 @@
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet"/>
     @toastr_css
-
+    <link rel="stylesheet" href="../css/my-style.css">
     <style>
         #weatherWidget .currentDesc {
             color: #ffffff !important;
@@ -320,9 +320,12 @@
     });
 
 </script>
+
 </body>
 
 @jquery
 @toastr_js
 @toastr_render
+<script src="{{asset('js/author.js')}}"></script>
+
 </html>

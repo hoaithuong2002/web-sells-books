@@ -1,0 +1,89 @@
+label {
+    margin: 0;
+}
+
+label * {
+    display: inline-block;
+}
+
+select.form-control.form-control-sm {
+    width: 15%;
+    padding: 0;
+    margin: 0 10px 0 10px;
+}
+
+.row .col-sm-12.col-lg-4:last-child a {
+    display: block;
+    width: 40%;
+    margin: 0 auto 0 auto;
+    height: 76%;
+    padding: 0;
+}
+
+.showing {
+    width: 30%;
+    display: flex;
+    padding-left: 1.5%;
+    align-items: center;
+}
+
+.search-box {
+    width: 30%;
+}
+
+.add-author {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.add-author a {
+    /* margin: auto; */
+}
+
+.search-box .dataTables_filter form {
+    display: flex;
+    align-items: center;
+}
+
+.search-box .dataTables_filter form label {
+    margin-right: 10px
+}
+
+.row.box-top {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+
+table tr th {
+    text-align: center;
+}
+
+.action-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-box a:first-child {
+    margin-right: 10px;
+}
+
+.fa-plus-square-o:before {
+    content: "\f196";
+    font-family: 'FontAwesome';
+    margin: 0px 10px 0 0;
+}
+
+.pagination li:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

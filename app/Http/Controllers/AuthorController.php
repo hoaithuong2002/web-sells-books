@@ -80,4 +80,12 @@ class AuthorController extends Controller
         $authors = DB::table('authors')->where('name', 'LIKE', "%$search%")->paginate(4);
         return view('back-end.author.index',  compact('authors'));
     }
+
+    public function show($id )
+    {
+
+        $author= DB::table('authors')->where('id','=',$id)->get();
+//        return view('back-end.author.show',compact('author'));
+        return $author;
+    }
 }

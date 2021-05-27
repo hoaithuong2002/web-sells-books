@@ -22,6 +22,7 @@ Route::prefix('author')->group(function () {
     Route::post('/update/{id}', [AuthorController::class, 'update'])->name('author.update');
     Route::get('/delete/{id}', [AuthorController::class, 'delete'])->name('author.delete');
     Route::post('/search', [AuthorController::class, 'search'])->name('author.search');
+    Route::get('/show/{id}',[AuthorController::class, 'show'])->name('author.show');
 });
 Route::prefix('category')->group(function () {
     Route::get('/', [AuthorController::class, 'index'])->name('category.index');
