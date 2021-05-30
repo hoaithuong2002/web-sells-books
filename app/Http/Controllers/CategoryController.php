@@ -48,6 +48,10 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-
+        $category = Category::findOrFail($id);
+        $category->delete();
+        toastr()->success('Da xoa thanh cong');
+        return redirect()->route('category.index');
     }
+
 }

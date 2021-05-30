@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Author's Information </h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add Category  </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -18,7 +18,7 @@
                     <p id="author-year" class=" m-1"> Năm sinh :</p>
                     <p id="author-amount" class="m-1">Số lượng tác phẩm :</p>
                     <p id="author-nationality" class="m-1">Quốc tích :</p>
-                    <p id="author-link" class="m-1">Link wiki:</p>
+                    <p id="author-link" href="{{$author->link}}" class="m-1"> Link wiki</p>
                 </div>
             </div>
             <div class="modal-footer">
@@ -27,6 +27,3 @@
         </div>
     </div>
 </div>
-<script>
-
-</script>

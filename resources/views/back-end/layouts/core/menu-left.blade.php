@@ -9,38 +9,23 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Author</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('author.index')}}">Author List</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('author.create')}}">Add Author</a></li>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{route('author.index')}}">Author List</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="{{route('author.create')}}">Add Author</a></li>
 
-                        </ul>
+                    </ul>
                 </li>
-{{--                <li class="menu-item-has-children dropdown">--}}
-{{--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"--}}
-{{--                       aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Management Library</a>--}}
-{{--                    <ul class="sub-menu children dropdown-menu">--}}
-{{--                        <li><i class="fa fa-table"></i><a href="{{route('library.index')}}">List Library</a></li>--}}
-{{--                        <li><i class="fa fa-table"></i><a href="{{route('library.create')}}">Add Library</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--                <li class="menu-item-has-children dropdown">--}}
-{{--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"--}}
-{{--                       aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Book</a>--}}
-{{--                    <ul class="sub-menu children dropdown-menu">--}}
-{{--                        <li><i class="menu-icon fa fa-th"></i><a href="{{route('book.index')}}"> List Book</a></li>--}}
-{{--                        <li><i class="menu-icon fa fa-th"></i><a href="{{route('book.create')}}">Add Book</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
 
-                <li class="menu-title">Icons</li><!-- /.menu-title -->
+
+                <li class="menu-title">Category</li><!-- /.menu-title -->
 
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
+                       aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Category</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a>
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{route('category.index')}}"> ListCategory</a>
                         </li>
-                        <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
+                        <li><i class="menu-icon ti-themify-logo"></i><a href="{{route('category.create')}}">Add Category</a></li>
                     </ul>
                 </li>
                 <li>

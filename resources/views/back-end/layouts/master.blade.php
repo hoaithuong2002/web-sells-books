@@ -8,6 +8,7 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @yield('title')
@@ -32,6 +33,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
     @toastr_css
     <link rel="stylesheet" href="../css/my-style.css">
     <style>
@@ -81,6 +85,8 @@
             font-size: 16px;
         }
     </style>
+{{--    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>--}}
+
 
 </head>
 <body>
@@ -327,5 +333,7 @@
 @toastr_js
 @toastr_render
 <script src="{{asset('js/author.js')}}"></script>
+<script src="{{asset('js/category.js')}}"></script>
+
 
 </html>
