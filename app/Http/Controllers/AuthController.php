@@ -35,4 +35,9 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+
+//    public function register(Request $request)
+//    {
+//        $user->name = $request->name;
+//    }
 }

@@ -164,6 +164,10 @@ Googel Fonts  */
 /* Googel Fonts End
 
 */
+.panel-default {
+    opacity: 0.9;
+    margin-top:30px;
+}
 .bg-flat-color-1 {
   background: #00c292; }
 

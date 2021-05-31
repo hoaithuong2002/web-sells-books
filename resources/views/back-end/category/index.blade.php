@@ -51,7 +51,7 @@
                                 @foreach($categories as $key=>$category)
                                     <tr class="author-list">
                                         <td>{{++$key}}</td>
-                                        <td>{{$category->name}}</td>
+                                        <td><a href="{{$category->name}}">{{$category->name}}</a></td>
                                         <td>{{$category->amount}}</td>
                                         <td>
                                             <div class="action-box">

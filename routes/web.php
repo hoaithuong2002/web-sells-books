@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login',[AuthController::class, 'showLogin'])->name('login');
+Route::post('/login',[AuthController::class,'login'])->name('admin.login');
+
 Route::prefix('author')->group(function () {
     Route::get('/', [AuthorController::class, 'index'])->name('author.index');
     Route::get('/create', [AuthorController::class, 'create'])->name('author.create');
@@ -34,4 +38,5 @@ Route::prefix('category')->group(function () {
     Route::post('/search', [CategoryController::class, 'search'])->name('category.search');
     Route::get('/show/{id}  ', [CategoryController::class, 'show'])->name('category.show');
 });
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 

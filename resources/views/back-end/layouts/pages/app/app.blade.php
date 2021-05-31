@@ -28,6 +28,7 @@
 </head>
 <body class="bg-dark">
 
+
 @yield('login')
 @yield('forget')
 @yield('register')
