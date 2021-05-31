@@ -12,12 +12,13 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = DB::table('categories')->paginate(5);
-        return view('back-end.category.index',compact('categories'));
+        return view('back-end.category.index ' ,compact('categories'));
     }
 
     public function create()
     {
-        return view('back-end.category.create');
+        $categories = DB::table('categories')->paginate(5);
+        return view('back-end.category.create',compact('categories'));
     }
 
     public function store(CategoryRequest $request)
@@ -52,6 +53,19 @@ class CategoryController extends Controller
         $category->delete();
         toastr()->success('Da xoa thanh cong');
         return redirect()->route('category.index');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->keyword;
+        $categories = DB::table('categories')->where('name' , 'LIKE', "%$search%")->paginate('4');
+        return view('back-end.category.index',compact('categories'));
+    }
+
+    public function show($id )
+    {
+        $category= DB::table('categories')->where('id','=',$id)->get();
+        return $category;
     }
 
 }

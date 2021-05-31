@@ -25,6 +25,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'amount' => 'required|numeric|min:0|not_in:0',
+            'name'=>'required'
         ];
     }
     public function messages()
@@ -34,6 +35,8 @@ class CategoryRequest extends FormRequest
             'amount.min'=>"Tong so tac pham phai lon hon 0",
             'amount.numeric'=>"Truong nay bat buoc la so ",
             'amount.not_in'=>"Gia tri dam bao khong duoc bang 0",
+            'name.required'=>"Truong nay khong duoc de trong",
+//            'name.unique'=>'Truong nay da ton tai',
         ];
     }
 }

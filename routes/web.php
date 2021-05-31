@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::prefix('author')->group(function () {
     Route::get('/', [AuthorController::class, 'index'])->name('author.index');
     Route::get('/create', [AuthorController::class, 'create'])->name('author.create');
@@ -33,4 +32,6 @@ Route::prefix('category')->group(function () {
     Route::post('/update/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
     Route::post('/search', [CategoryController::class, 'search'])->name('category.search');
+    Route::get('/show/{id}  ', [CategoryController::class, 'show'])->name('category.show');
 });
+

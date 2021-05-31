@@ -5,7 +5,7 @@
                 <li class="active">
                     <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
-                <li class="menu-title">UI elements</li><!-- /.menu-title -->
+                <li class="menu-title">Management User <li><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Author</a>
@@ -15,10 +15,6 @@
 
                     </ul>
                 </li>
-
-
-                <li class="menu-title">Category</li><!-- /.menu-title -->
-
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Category</a>
@@ -28,6 +24,10 @@
                         <li><i class="menu-icon ti-themify-logo"></i><a href="{{route('category.create')}}">Add Category</a></li>
                     </ul>
                 </li>
+
+                <li class="menu-title">Management Page</li><!-- /.menu-title -->
+
+
                 <li>
                     <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
                 </li>

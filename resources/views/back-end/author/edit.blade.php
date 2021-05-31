@@ -4,7 +4,7 @@
         <div class="card">
             <form method="post" action="{{route('author.update' , $author->id)}}" enctype="multipart/form-data">
                 @csrf
-                <div class="card-header"><strong>Add Author</strong></div>
+                <div class="card-header"><strong>Edit Author</strong></div>
                 <div class="card-body card-block">
                     <div class="form-group">
                         <label for="name" class=" form-control-label">Name Author <i class="contact-index-index ">*</i></label>
