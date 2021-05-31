@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/login',[AuthController::class, 'showLogin'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('admin.login');
-
+Route::get('/register',[AuthController::class,'pageRegister'])->name('register');
+Route::post('/register',[AuthController::class,'register'])->name('admin.register');
 Route::prefix('author')->group(function () {
     Route::get('/', [AuthorController::class, 'index'])->name('author.index');
     Route::get('/create', [AuthorController::class, 'create'])->name('author.create');

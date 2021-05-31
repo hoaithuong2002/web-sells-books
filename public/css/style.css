@@ -1765,7 +1765,7 @@ header .form-inline {
   margin: 8vh auto; }
 
 .login-form {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.94);
   padding: 30px 30px 20px;
   border-radius: 2px; }
 
