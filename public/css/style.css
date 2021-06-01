@@ -164,6 +164,18 @@ Googel Fonts  */
 /* Googel Fonts End
 
 */
+.bg {
+    /* The image used */
+
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .panel-default {
     opacity: 0.9;
     margin-top:30px;
@@ -1336,15 +1348,15 @@ header .form-inline {
     .card .card-top.p-0 .card-title,
     .card .card-footer.p-0 .card-title {
       padding: 1.125em; }
-    .card .card-top.bg-flat-color-1,
-    .card .card-footer.bg-flat-color-1 {
+    .card .card-top-flat-color-1,
+    .card .card-footer-flat-color-1 {
       background: #5c6bc0;
       border: none; }
-    .card .card-top.bg-flat-color-2,
-    .card .card-footer.bg-flat-color-2 {
+    .card .card-top-flat-color-2,
+    .card .card-footer-flat-color-2 {
       background: #42a5f5;
       border: none; }
-    .card .card-top.bg-flat-color-3,
+    .card .card-top-flat-color-3,
     .card .card-footer.bg-flat-color-3 {
       background: #ffa726;
       border: none; }

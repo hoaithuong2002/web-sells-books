@@ -26,7 +26,7 @@
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 </head>
-<body class="bg-dark">
+<body class="bg" style="background-image: url('{{asset('images/background/background.jpg')}}')">
 
 
 @yield('login')

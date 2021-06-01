@@ -1,18 +1,17 @@
 @extends('back-end.layouts.pages.app.app')
 @section('register')
-    <div style="background-image: url('{{asset('images/background/background.jpg')}}')">
         <div class="sufee-login d-flex align-content-center flex-wrap">
             <div class="container">
                 <div class="login-content">
-                    <div class="login-logo">
-                        <h1>Register</h1>
-                    </div>
                     <div class="login-form">
+                        <div class="login-logo">
+                            <h1>Register</h1>
+                        </div>
                         <form method="post" action="{{route('admin.register')}}" class="login-form">
                             @csrf
                             <div class="form-group">
                                 <label>User Name</label>
-                                <input value="{{ old('name')}}" type="text" name="name"
+                                <input value="{{ old('name')}}" type="text" name="name" id="name"
                                        class="form-control  @error('name') border-danger  @enderror" required>
                                 @error('name')
                                 <p class="text-danger">{{ $message }}</p>
@@ -20,7 +19,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Email </label>
-                                <input value="{{ old('email')}}" type="text" name="email"
+                                <input value="{{ old('email')}}" type="text" name="email" id="email"
                                        class="form-control  @error('email') border-danger  @enderror" required>
                                 @error('email')
                                 <p class="text-danger">{{ $message }}</p>

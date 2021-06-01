@@ -10,11 +10,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    function showLogin(){
-        if (!Auth::check()){
-            return view('back-end.layouts.pages.login');
-        }
-        return redirect()->route('admin.login');
+    function showLogin()
+    {
+        return view('back-end.layouts.pages.login');
     }
 
     function login(Request $request)
@@ -29,10 +27,12 @@ class AuthController extends Controller
         if (!Auth::attempt($data)) {
             return redirect()->route('login')->with('login-error', 'Tài khoản hoặc mật khẩu không đúng!');
         } else {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('author.index');
         }
     }
-    function logout(Request $request){
+
+    function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
@@ -41,7 +41,7 @@ class AuthController extends Controller
 
     public function pageRegister()
     {
-       return view('back-end.layouts.pages.register');
+        return view('back-end.layouts.pages.register');
     }
 
     public function register(RegisterRequest $request): \Illuminate\Http\RedirectResponse
@@ -50,6 +50,8 @@ class AuthController extends Controller
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect()->route('admin.register');
+        return redirect()->route('login');
+
     }
+
 }
